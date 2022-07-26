@@ -52,9 +52,21 @@ const manager = () => {
         ])
         .then(answers => {
 
-            //store answers in object, send object to array. then call the next function. 
+            if (answers.next === "Add engineer") {
+                engineer();
+            } else if (answers.next === "Add Intern") {
+                intern()
+            };
 
-        })
+            const  { name, id, email, officeNumber } = answers; 
+
+            const manager = new Manager (name, id, email, officeNumber);
+
+            teamArray.push(manager);
+
+            console.log(teamArray);
+            
+        }) 
         
 };
 
@@ -144,4 +156,5 @@ const intern = () => {
 
 
 manager()
+    
 
