@@ -6,6 +6,8 @@ const Engineer = require("./lib/Engineer");
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 
+teamArray = [];
+
 //inquirer prompts
 // prompts for adding manager upon application startup 
 const manager = () => {
@@ -42,12 +44,18 @@ const manager = () => {
         
         {
             type: "list",
-            name: "next?",
+            name: "next",
             choices: ["Add engineer" , "Add Intern" , "My team is complete!"],
-            validate: (value)=>{ if(value){return true} else {return 'please input your project manager office number to continue'}},
+            validate: (value)=>{ if(value){return true} else {return 'please input what you would like to do next to continue'}},
         },
 
-        ]);
+        ])
+        .then(answers => {
+
+            //store answers in object, send object to array. then call the next function. 
+
+        })
+        
 };
 
 const engineer = () => {
@@ -84,9 +92,9 @@ const engineer = () => {
 
         {
             type: "list",
-            name: "next?",
+            name: "next",
             choices: ["Add engineer" , "Add Intern" , "My team is complete!"],
-            validate: (value)=>{ if(value){return true} else {return 'please input your project manager office number to continue'}},
+            validate: (value)=>{ if(value){return true} else {return 'please input what you would like to do next to continue'}},
         },
 
         ])
@@ -126,9 +134,9 @@ const intern = () => {
 
             {
                 type: "list",
-                name: "next?",
+                name: "next",
                 choices: ["Add engineer" , "Add Intern" , "My team is complete!"],
-                validate: (value)=>{ if(value){return true} else {return 'please input your project manager office number to continue'}},
+                validate: (value)=>{ if(value){return true} else {return 'please input what you would like to do next to continue'}},
             },
         
         ])
@@ -136,3 +144,4 @@ const intern = () => {
 
 
 manager()
+

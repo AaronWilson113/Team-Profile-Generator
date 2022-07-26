@@ -9,7 +9,7 @@ describe("employee" , () => {
 
         expect(employee.name).toEqual(expect.any(String));
         
-        })
+        });
     });
 
     describe("id" , () => {
