@@ -1,4 +1,4 @@
-const intern = require("intern")
+const intern = require("../lib/Intern")
 
 describe("intern" , () => {
     describe("school" , () =>{

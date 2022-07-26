@@ -1,4 +1,4 @@
-const manager = require("manager")
+const manager = require("../lib/Manager")
 
 describe("manager" , () => {
     describe("officeNumber" , () => {
