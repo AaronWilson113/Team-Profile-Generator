@@ -1,9 +1,10 @@
 //required modules
 const inquirer = require("inquirer");
 const fs = require("fs");
-const Manager = require("../lib/Manager")
-const Engineer = require("../lib/Engineer")
-const Intern = require("../lib/Intern")
+const Employee = require("./lib/Employee");
+const Engineer = require("./lib/Engineer");
+const Intern = require('./lib/Intern');
+const Manager = require('./lib/Manager');
 
 //inquirer prompts
 // prompts for adding manager upon application startup 
@@ -112,3 +113,5 @@ const intern = () => {
         ])
 };
 
+
+manager()
