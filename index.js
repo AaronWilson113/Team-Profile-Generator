@@ -58,9 +58,9 @@ const manager = () => {
                 intern()
             };
 
-            const  { name, id, email, officeNumber } = answers; 
+            const  { managerName, managerID, managerEmail, managerOfficeNum } = answers; 
 
-            const manager = new Manager (name, id, email, officeNumber);
+            const manager = new Manager (managerName, managerID, managerEmail, managerOfficeNum);
 
             teamArray.push(manager);
 
