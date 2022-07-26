@@ -110,6 +110,23 @@ const engineer = () => {
         },
 
         ])
+        .then(answers => {
+
+            if (answers.next === "Add engineer") {
+                engineer();
+            } else if (answers.next === "Add Intern") {
+                intern()
+            };
+
+            const  { engineerName, engineerID, engineerEmail, engineerGit} = answers; 
+
+            const manager = new Engineer (engineerName, engineerID, engineerEmail, engineerGit);
+
+            teamArray.push(manager);
+
+            console.log(teamArray);
+            
+        }) 
 };
 
 const intern = () => {
@@ -152,6 +169,23 @@ const intern = () => {
             },
         
         ])
+        .then(answers => {
+
+            if (answers.next === "Add engineer") {
+                engineer();
+            } else if (answers.next === "Add Intern") {
+                intern()
+            };
+
+            const  { internName, internID , internEmail, internSchool} = answers; 
+
+            const manager = new Intern (internName, internID , internEmail, internSchool);
+
+            teamArray.push(manager);
+
+            console.log(teamArray);
+            
+        }) 
 };
 
 
