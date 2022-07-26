@@ -40,7 +40,14 @@ const manager = () => {
             validate: (value)=>{ if(value){return true} else {return 'please input your project manager office number to continue'}},
         },
         
-        ])
+        {
+            type: "list",
+            name: "next?",
+            choices: ["Add engineer" , "Add Intern" , "My team is complete!"],
+            validate: (value)=>{ if(value){return true} else {return 'please input your project manager office number to continue'}},
+        },
+
+        ]);
 };
 
 const engineer = () => {
@@ -73,6 +80,13 @@ const engineer = () => {
             name: "engineerGit",
             message: "What is your engineer's github account username?",
             validate: (value)=>{ if(value){return true} else {return 'please input your engineers github account username to continue'}},
+        },
+
+        {
+            type: "list",
+            name: "next?",
+            choices: ["Add engineer" , "Add Intern" , "My team is complete!"],
+            validate: (value)=>{ if(value){return true} else {return 'please input your project manager office number to continue'}},
         },
 
         ])
@@ -108,6 +122,13 @@ const intern = () => {
                 name: "internSchool",
                 message: "What is your intern's school?",
                 validate: (value)=>{ if(value){return true} else {return 'please input your interns school to continue'}},
+            },
+
+            {
+                type: "list",
+                name: "next?",
+                choices: ["Add engineer" , "Add Intern" , "My team is complete!"],
+                validate: (value)=>{ if(value){return true} else {return 'please input your project manager office number to continue'}},
             },
         
         ])
