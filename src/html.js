@@ -13,6 +13,7 @@ const generateHTML = function (data) {
     <link  rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
     <title>Team-profile-generator</title>
+    <link rel = "stylesheet" href = "style.css" />
 </head>
 
 <body>
