@@ -1,10 +1,10 @@
 //required modules
 const inquirer = require("inquirer");
 const fs = require("fs");
-const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
+
 
 teamArray = [];
 
@@ -52,12 +52,6 @@ const manager = () => {
         ])
         .then(answers => {
 
-            if (answers.next === "Add engineer") {
-                engineer();
-            } else if (answers.next === "Add Intern") {
-                intern()
-            };
-
             const  { managerName, managerID, managerEmail, managerOfficeNum } = answers; 
 
             const manager = new Manager (managerName, managerID, managerEmail, managerOfficeNum);
@@ -65,6 +59,14 @@ const manager = () => {
             teamArray.push(manager);
 
             console.log(teamArray);
+
+            if (answers.next === "Add engineer") {
+                engineer();
+            } else if (answers.next === "Add Intern") {
+                intern();
+            } else if (answers.next === "My team is complete!") {
+                renderPage();
+            }
             
         }) 
         
@@ -112,19 +114,24 @@ const engineer = () => {
         ])
         .then(answers => {
 
-            if (answers.next === "Add engineer") {
-                engineer();
-            } else if (answers.next === "Add Intern") {
-                intern()
-            };
-
             const  { engineerName, engineerID, engineerEmail, engineerGit} = answers; 
 
-            const manager = new Engineer (engineerName, engineerID, engineerEmail, engineerGit);
+            const engineer = new Engineer (engineerName, engineerID, engineerEmail, engineerGit);
 
-            teamArray.push(manager);
+            teamArray.push(engineer);
 
             console.log(teamArray);
+
+            if (answers.next === "Add engineer") {
+                addEngineer();
+            } else if (answers.next === "Add Intern") {
+                intern();
+            } else if (answers.next === "My team is complete!") {
+                renderPage();
+            };
+
+
+           
             
         }) 
 };
@@ -170,24 +177,42 @@ const intern = () => {
         
         ])
         .then(answers => {
+            
+            const  { internName, internID , internEmail, internSchool} = answers; 
+
+            const intern = new Intern (internName, internID , internEmail, internSchool);
+
+            teamArray.push(intern);
+
+            console.log(teamArray);
 
             if (answers.next === "Add engineer") {
                 engineer();
             } else if (answers.next === "Add Intern") {
-                intern()
+                intern();
+            } else if (answers.next === "My team is complete!") {
+                renderPage();
             };
 
-            const  { internName, internID , internEmail, internSchool} = answers; 
 
-            const manager = new Intern (internName, internID , internEmail, internSchool);
-
-            teamArray.push(manager);
-
-            console.log(teamArray);
+           
             
         }) 
 };
 
+function addEngineer() {
+
+    engineer();
+
+};
+
+function renderPage () {
+   
+    console.log("Done");
+
+    fs.writeFileSync(outputpath, generateTeam(teamArray), "UTF-8")
+
+}
 
 manager()
     
