@@ -4,6 +4,11 @@ const fs = require("fs");
 const Engineer = require("./lib/Engineer");
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
+//using path and output to write file
+const path = require('path');
+const output = path.resolve(__dirname , 'output');
+const outputpath = path.join(output , 'team.html')
+const generateTeam = require('./src/html.js')
 
 
 teamArray = [];
