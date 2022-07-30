@@ -130,7 +130,7 @@ const engineer = () => {
             if (answers.next === "Add engineer") {
                 addEngineer();
             } else if (answers.next === "Add Intern") {
-                intern();
+                addIntern();
             } else if (answers.next === "My team is complete!") {
                 renderPage();
             };
@@ -192,9 +192,9 @@ const intern = () => {
             console.log(teamArray);
 
             if (answers.next === "Add engineer") {
-                engineer();
+                addEngineer();
             } else if (answers.next === "Add Intern") {
-                intern();
+                addIntern();
             } else if (answers.next === "My team is complete!") {
                 renderPage();
             };
@@ -203,6 +203,12 @@ const intern = () => {
            
             
         }) 
+};
+
+function addIntern() {
+
+    intern();
+
 };
 
 function addEngineer() {
