@@ -225,6 +225,6 @@ function renderPage () {
 
 }
 
-manager()
+manager();
     
 
